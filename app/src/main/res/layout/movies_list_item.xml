@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_normal"
+    android:elevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/blackContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        android:paddingTop="@dimen/margin_xlarge">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/card_color"
+            android:paddingVertical="@dimen/margin_normal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/verticalGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ratingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/yellow"
+                android:textSize="28sp"
+                android:fontFamily="@font/madani_semi_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/verticalGuideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tool:text="8.1" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/movieRatingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_large"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progressTint="@color/yellow"
+                app:layout_constraintBottom_toBottomOf="@id/ratingTextView"
+                app:layout_constraintStart_toEndOf="@id/ratingTextView"
+                app:layout_constraintTop_toTopOf="@id/ratingTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/movieImageView"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_large"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            tool:src="@drawable/placeholder_ic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
+            tool:ignore="ContentDescription" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/movieTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textAlignment="center"
+            android:textColor="@color/off_white"
+            android:textSize="16sp"
+            android:lineSpacingMultiplier="1.4"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:fontFamily="@font/madani_medium"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/movieImageView"
+            app:layout_constraintTop_toTopOf="@id/movieImageView"
+            tool:text="John Wick: Chapter 4" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/releaseDateTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:maxLines="2"
+            android:textAlignment="center"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:textColor="@color/off_white"
+            android:textSize="16sp"
+            android:fontFamily="@font/madani_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/movieImageView"
+            app:layout_constraintTop_toBottomOf="@id/movieTitleTextView"
+            tool:text="2023-02-22" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
