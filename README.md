@@ -55,7 +55,7 @@
 #
 
 
-# Error#
+# Error
 #
 
 ![Screenshot_1679755892](https://user-images.githubusercontent.com/38296077/227733657-172c4814-4151-496c-86e1-0b908c8a8c1c.png)
